@@ -24,7 +24,7 @@ export async function proxy(request: NextRequest) {
   const { data } = await supabase.auth.getClaims()
   const logado = Boolean(data?.claims?.sub)
   const caminho = request.nextUrl.pathname
-  const publico = caminho === "/login" || caminho === "/api/auth-debug"
+  const publico = caminho === "/login"
   if (!logado && !publico) {
     const destino = request.nextUrl.clone()
     destino.pathname = "/login"

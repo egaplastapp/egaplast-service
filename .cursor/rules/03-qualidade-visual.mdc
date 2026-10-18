@@ -1,0 +1,14 @@
+---
+description: Critérios de interface quando a tarefa produz ou altera telas da EGAPLAST.
+globs: src/**/*.tsx
+alwaysApply: false
+---
+
+# Qualidade visual
+
+- Protótipo funcional no aplicativo existente vale mais do que uma imagem conceitual.
+- Reutilize `src/components/ui` e os shells já existentes. Não introduza outra biblioteca de interface.
+- Tela operacional mostra vazio, carregamento, erro e divergência entre fontes quando o fluxo tiver esses casos.
+- Dado demonstrativo fica rotulado como fictício, com origem e data quando existirem.
+- Números e pedidos de demonstração não são apresentados como a operação atual da EGAPLAST.
+- Texto de interface em português, com a ação e a consequência visíveis.

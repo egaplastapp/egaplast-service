@@ -1,0 +1,14 @@
+---
+description: Restrições de arquitetura e integração já visíveis no código da EGAPLAST.
+globs: src/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Arquitetura e integrações
+
+- Stack vigente: Next.js 16 (App Router), React 19, TypeScript, Tailwind 4 e componentes em `src/components/ui`. Testes com Vitest.
+- Persistência: Supabase/Postgres do projeto `egaplast` (`hdfiitvuzroelorwmguk`). A tela lê o banco. A coleta do Sellent é `npm run coletar`.
+- Domínio em `src/domain`, sem React. O mapeamento do payload fica em `src/lib/sellent`.
+- Não há cliente de SIFN, Monday ou Zion. Não descreva essas integrações como se o contrato já existisse. O Sellent entra só por `GET`, com os endpoints já lidos em produção.
+- Integração nova entra em camada isolada, com origem, data, falha e reprocessamento explícitos.
+- Não adicione serviço, fila, cache ou dependência sem necessidade demonstrada no código ou no contexto de negócio.

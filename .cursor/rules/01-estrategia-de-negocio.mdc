@@ -1,0 +1,16 @@
+---
+description: Limites do que pode ser afirmado sobre o negócio, os pedidos e os sistemas da EGAPLAST.
+alwaysApply: true
+---
+
+# Negócio EGAPLAST
+
+Antes de analisar processo, pedido, integração ou escopo, leia `docs/negocio/contexto.md`.
+
+- O problema prioritário é a rastreabilidade de pedidos entre Sellent, ERP SIFN e Monday.
+- O objetivo é identificar a etapa operacional real, os SKUs, as pendências, a área responsável e o motivo de o pedido estar parado.
+- O status em um sistema não prova o estado operacional em outro.
+- Acesso à API do Sellent foi declarado pelo responsável. Este repositório não contém cliente, contrato nem credencial dessa API.
+- O acesso ao SIFN ainda precisa ser obtido. WMS Zion e o sistema de frente de loja são integrações futuras.
+- A aplicação atual é demonstração. Seed, localStorage e preços de demonstração não são a operação real.
+- `docs/produto-egaplast.md` é o rascunho anterior. Se divergir do contexto vigente ou do código, explicite o conflito.

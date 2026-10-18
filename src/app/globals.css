@@ -1,0 +1,289 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Tokens EGAPLAST (extraídos do protótipo V8) */
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --shadow-soft: 0 12px 32px rgb(18 34 54 / 0.09);
+  --shadow-card: 0 8px 28px rgb(18 34 54 / 0.055);
+}
+
+:root {
+  /* Premium v2 — referência docs/index.html (Central de Operações) */
+  --brand: #176b56;
+  --brand-strong: #105341;
+  --brand-soft: #e5f4ee;
+  --info: #2f65c8;
+  --info-soft: #eaf1ff;
+  --success: #176b56;
+  --success-soft: #e5f4ee;
+  --warning: #a76512;
+  --warning-soft: #fff3dc;
+  --danger: #b43b42;
+  --danger-soft: #ffebed;
+
+  --background: #f5f7fa;
+  --foreground: #17212f;
+  --card: #ffffff;
+  --card-foreground: #17212f;
+  --popover: #ffffff;
+  --popover-foreground: #17212f;
+  --primary: #176b56;
+  --primary-foreground: #ffffff;
+  --secondary: #e5f4ee;
+  --secondary-foreground: #105341;
+  --muted: #eef2f6;
+  --muted-foreground: #718096;
+  --accent: #e5f4ee;
+  --accent-foreground: #105341;
+  --destructive: #b43b42;
+  --border: #e5eaf0;
+  --input: #d0d5dd;
+  --ring: #70d4b2;
+  --chart-1: #176b56;
+  --chart-2: #2f65c8;
+  --chart-3: #a76512;
+  --chart-4: #b43b42;
+  --chart-5: #8ca0b7;
+  --radius: 0.875rem;
+  --sidebar: #111c2b;
+  --sidebar-foreground: #a9b5c5;
+  --sidebar-primary: #1c735e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1c735e;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #ffffff15;
+  --sidebar-ring: #70d4b2;
+  --cabecalho-tabela: #f8fafc;
+  --nav-active: #1c735e;
+  --nav-active-accent: #70d4b2;
+}
+
+.dark {
+  --brand: #43c79b;
+  --brand-strong: #7ddfb8;
+  --brand-soft: #133326;
+  --info: #6b9aeb;
+  --info-soft: #152238;
+  --success: #43c79b;
+  --success-soft: #133326;
+  --warning: #e0b453;
+  --warning-soft: #3a2e12;
+  --danger: #f07a84;
+  --danger-soft: #3d1a1f;
+
+  --background: #0e1520;
+  --foreground: #e4e7ec;
+  --card: #17212f;
+  --card-foreground: #e4e7ec;
+  --popover: #17212f;
+  --popover-foreground: #e4e7ec;
+  --primary: #43c79b;
+  --primary-foreground: #0e1520;
+  --secondary: #133326;
+  --secondary-foreground: #7ddfb8;
+  --muted: #1f2a38;
+  --muted-foreground: #91a1b4;
+  --accent: #133326;
+  --accent-foreground: #7ddfb8;
+  --destructive: #f07a84;
+  --border: #2a3544;
+  --input: #3b4a5e;
+  --ring: #43c79b;
+  --chart-1: #43c79b;
+  --chart-2: #6b9aeb;
+  --chart-3: #e0b453;
+  --chart-4: #f07a84;
+  --chart-5: #8ca0b7;
+  --sidebar: #0a1019;
+  --sidebar-foreground: #a9b5c5;
+  --sidebar-accent: #1c735e;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #ffffff12;
+  --cabecalho-tabela: #1a2433;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+@utility eyebrow {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* só aparece se a navegação passar de 100 ms */
+.link-pendente {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.link-pendente.is-pending {
+  visibility: visible;
+  animation-name: pendente-entra, pendente-pulsa;
+  animation-duration: 200ms, 1s;
+  animation-delay: 100ms, 100ms;
+  animation-timing-function: ease, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: forwards, none;
+}
+
+@keyframes pendente-entra {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pendente-pulsa {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-pendente.is-pending {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Premium v2 — paridade index.html */
+@layer components {
+  .premium-metric {
+    @apply rounded-[14px] border border-border bg-card p-5 shadow-card transition-[transform,box-shadow] duration-150 motion-reduce:transition-none sm:p-[19px];
+  }
+  .premium-metric:hover {
+    @apply motion-safe:-translate-y-0.5;
+    box-shadow: var(--shadow-soft);
+  }
+  .premium-chip {
+    @apply inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 py-2 text-[11px] text-[#536174] shadow-sm transition-colors hover:bg-muted/60;
+  }
+  .priority-chip {
+    @apply inline-flex items-center gap-[7px] rounded-lg border border-border bg-card px-[11px] py-2 text-[11px] text-[#536174] shadow-sm;
+  }
+  .priority-chip b {
+    @apply font-bold text-[#263446];
+  }
+  .mini-dot {
+    @apply size-[7px] rounded-full;
+  }
+  .premium-action-card {
+    @apply flex gap-2.5 rounded-xl border border-border bg-card p-4 shadow-card;
+  }
+  .premium-panel {
+    @apply min-w-0 overflow-hidden rounded-[14px] border border-border bg-card shadow-card;
+  }
+  .premium-flow-track {
+    @apply h-[7px] overflow-hidden rounded-full bg-[#edf1f5];
+  }
+  .premium-alert-mark {
+    @apply grid size-8 shrink-0 place-items-center rounded-lg text-[13px];
+  }
+  .premium-alert-mark-amber {
+    @apply bg-warning-soft text-warning;
+  }
+  .premium-alert-mark-red {
+    @apply bg-danger-soft text-danger;
+  }
+  .premium-alert-mark-blue {
+    @apply bg-info-soft text-info;
+  }
+  .premium-text-button {
+    @apply text-xs font-bold text-brand hover:underline;
+  }
+  .premium-metric-value {
+    @apply tabular text-[1.8125rem] font-[760] tracking-[-0.045em];
+  }
+  .premium-layout-main {
+    @apply grid gap-[18px] lg:grid-cols-[minmax(0,1.65fr)_minmax(300px,0.85fr)];
+  }
+  .premium-bottom-grid {
+    @apply grid gap-[18px] lg:grid-cols-[1.2fr_0.8fr];
+  }
+}
+

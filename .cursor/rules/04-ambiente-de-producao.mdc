@@ -1,0 +1,17 @@
+---
+description: O ambiente conectado é produção. GET é livre, sem pedir permissão; POST, PUT, PATCH e DELETE só com permissão explícita na mensagem atual.
+alwaysApply: true
+---
+
+# Ambiente de produção
+
+O ambiente Postman `PRODUCTION` e a API Sellent ligada a ele são produção.
+
+- `GET` está liberado de forma permanente (decisão do responsável em 16/10/2026). Não peça permissão para ler. Use sempre o token do `.env.local`, sem exibi-lo.
+- Antes de rodar, confirme que o endpoint é só leitura. Em dúvida sobre efeito colateral, trate como escrita.
+- Em `GET`, limite o volume (paginação, `limit`, janela de datas) e não imprima dados pessoais de compradores.
+- Não execute `POST`, `PUT`, `PATCH` nem `DELETE` sem permissão explícita na mensagem atual.
+- Permissão para um método, um endpoint ou uma chamada não autoriza outro.
+- Ler a coleção no Postman não é chamar a API. Isso vale para qualquer método diferente de `GET`.
+- Não altere coleção, ambiente, token ou variável no Postman sem permissão explícita.
+- Com permissão de escrita, repita método, URL e efeito antes de executar.

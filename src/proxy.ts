@@ -1,10 +1,11 @@
+import { chavePublicaSupabase, urlSupabase } from "@/lib/supabase/config"
 import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 
 export async function proxy(request: NextRequest) {
   let resposta = NextResponse.next({ request })
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const chave = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+  const url = urlSupabase()
+  const chave = chavePublicaSupabase()
   if (!url || !chave) return resposta
 
   const supabase = createServerClient(url, chave, {

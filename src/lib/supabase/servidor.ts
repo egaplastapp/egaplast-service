@@ -1,3 +1,4 @@
+import { chavePublicaSupabase, urlSupabase } from "@/lib/supabase/config"
 import { createServerClient } from "@supabase/ssr"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
@@ -7,8 +8,8 @@ import { cache } from "react"
 export type Papel = "admin" | "operador"
 
 export async function criarClienteServidor() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const chave = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+  const url = urlSupabase()
+  const chave = chavePublicaSupabase()
   if (!url || !chave) throw new Error("Supabase não está configurado no servidor.")
   const cookieStore = await cookies()
   return createServerClient(url, chave, {
